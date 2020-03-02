@@ -10,6 +10,13 @@ Run the script and follow the assistant:
 
 Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
 
+### Docker Version
+Run `docker pull bitnami/minideb`
+Run `cd docker && docker-compose up -d`
+Now connect to **YOUR HOST IP** on _PORT#_ (*You Chose The Port* _Default: 1194_) 
+Using generated <**filename**>**.ovpn** file from **/root/docker/ovpn-files**
+Need Permissions? ``chown -R username:groupname /root/docker/ovpn-files/*.ovpn``
+Need Quick Automated Setup? ``docker pull bitnami/minideb && docker exec -it minideb /bin/bash && mkdir /root/docker/open-vpn && cd /root/docker/open-vpn && wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`` (**Follow On Screen Prompts**) [*Make Sure Port 1194 Is Available If Using That Port*]
 ### I want to run my own VPN but don't have a server for that
 You can get a VPS from just $1/month at [VirMach](https://billing.virmach.com/aff.php?aff=4109&url=billing.virmach.com/cart.php?gid=18).
 
